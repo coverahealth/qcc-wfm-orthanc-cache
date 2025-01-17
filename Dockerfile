@@ -1,6 +1,6 @@
 FROM coverahealth.jfrog.io/development-docker/python-base-image:1.0.1 AS builder
 
-ARG SERVICE_NAME=covera-poetry-template
+ARG SERVICE_NAME=qcc-wfm-orthanc-cache
 
 SHELL ["/bin/bash", "-c"]
 RUN mkdir -p /home/qcc/${SERVICE_NAME}
@@ -15,5 +15,5 @@ RUN --mount=type=secret,id=ARTIFACTORY_USER,required \
 
 ENV PATH=/home/qcc/${SERVICE_NAME}/venv/bin:$PATH
 
-CMD ["ddtrace-run", "python3", "-m", "covera_poetry_template.main"]
+CMD ["ddtrace-run", "python3", "-m", "qcc_wfm_orthanc_cache.main"]
 

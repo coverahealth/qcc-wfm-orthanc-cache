@@ -1,4 +1,4 @@
 traces:
-# src/covera_poetry_template/main.py
-- covera_poetry_template.main::main:
+# src/qcc_wfm_orthanc_cache/main.py
+- qcc_wfm_orthanc_cache.main::main:
     name: main

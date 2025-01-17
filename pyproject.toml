@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "covera-poetry-template"
+name = "qcc-wfm-orthanc-cache"
 version = "1.0.0"
 description = "A template project to use for creating new covera services"
 authors = [
@@ -8,7 +8,7 @@ authors = [
 ]
 readme = "README.md"
 packages = [
-    { include = "covera_poetry_template", from = "src" },
+    { include = "qcc_wfm_orthanc_cache", from = "src" },
 ]
 
 [[tool.poetry.source]]

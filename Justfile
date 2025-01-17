@@ -7,7 +7,7 @@ build: clean
     docker build \
      --secret id=ARTIFACTORY_USER,src=artifactory_user.txt \
      --secret id=ARTIFACTORY_API_KEY,src=artifactory_api_key.txt \
-     -t covera-poetry-template:1.0.0 .
+     -t qcc-wfm-orthanc-cache:1.0.0 .
 
     rm artifactory_user.txt
     rm artifactory_api_key.txt
@@ -67,13 +67,13 @@ test *args:
 
 # test-coverage runs pytest with the coverage plugin.
 test-coverage:
-    poetry run pytest --cov-report term-missing --cov=src/covera_poetry_template --cov-fail-under=80 tests/
+    poetry run pytest --cov-report term-missing --cov=src/qcc_wfm_orthanc_cache --cov-fail-under=80 tests/
 
 # covera-ddtrace-yml creates a yaml configuration for the Data Dog agent.
 covera-ddtrace-yml:
     env DD_TRACE_ENABLED=0 \
     poetry run python3 -m covera_ddtrace.utils.generate_covera_ddtrace_yml \
-        -r src/covera_poetry_template \
+        -r src/qcc_wfm_orthanc_cache \
         -s src/ \
         -d covera-ddtrace.yml \
         -n ""
