@@ -2,10 +2,7 @@
 name = "qcc-wfm-orthanc-cache"
 version = "1.0.0"
 description = "A template project to use for creating new covera services"
-authors = [
-    "Timothy Tanner <tgt843@gmail.com>",
-    "Taylor Rietz <taylor.rietz@coverahealth.com>"
-]
+authors = ["arundcovera <arun.durairaj@coverahealth.com>"]
 readme = "README.md"
 packages = [
     { include = "qcc_wfm_orthanc_cache", from = "src" },
@@ -20,6 +17,11 @@ priority = "supplemental"
 python = "^3.11"
 covera-ddtrace = "^0.1.11"
 covera-logging = "^1.0.8"
+fastapi = "^0.115.6"
+uvicorn = "^0.21.1"
+pydantic = {version = "^1.10.7", extras = ["dotenv"]}
+apscheduler = "^3.11.0"
+httpx = "^0.28.1"
 
 [tool.poetry.group.dev.dependencies]
 docformatter = "^1.7.5"
