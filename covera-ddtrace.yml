@@ -1,0 +1,4 @@
+traces:
+# src/covera_poetry_template/main.py
+- covera_poetry_template.main::main:
+    name: main

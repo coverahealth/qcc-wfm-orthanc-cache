@@ -1,0 +1,5 @@
+# dockerignore is used to determine which resources are available to the build context for ADD and COPY instructions.
+# With our build patterns it's sensible to exclude everything other than what we're building since we're not building a wheel in the container.
+*
+# include our target file
+!dist/*

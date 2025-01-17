@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "covera-poetry-template"
+version = "1.0.0"
+description = "A template project to use for creating new covera services"
+authors = [
+    "Timothy Tanner <tgt843@gmail.com>",
+    "Taylor Rietz <taylor.rietz@coverahealth.com>"
+]
+readme = "README.md"
+packages = [
+    { include = "covera_poetry_template", from = "src" },
+]
+
+[[tool.poetry.source]]
+name = "development-pypi"
+url = "https://coverahealth.jfrog.io/artifactory/api/pypi/development-pypi/simple"
+priority = "supplemental"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+covera-ddtrace = "^0.1.11"
+covera-logging = "^1.0.8"
+
+[tool.poetry.group.dev.dependencies]
+docformatter = "^1.7.5"
+isort = "^5.13.2"
+black = "^24.4.2"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.2"
+pytest-mock = "^3.14.0"
+pytest-cov = "^5.0.0"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+#asyncio_mode = "auto"  # if using pytest-ascynio
+#filterwarnings = [
+#    'ignore:.*/var/run/secrets.*',  # if using a secrets dir
+#    'ignore:.*/var/app/secrets/execution_engine.*',  # if using execution engine
+#]
+
+
+[tool.docformatter]
+recursive = true
+wrap-descriptions = 88
+wrap-summaries = 88
+
+[tool.isort]
+profile = "black"
+combine_as_imports = true
+combine_star = true
+multi_line_output = 3
+force_grid_wrap = 2
+lines_after_imports = 2
+sections = "FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+
+[tool.black]
+target-versions = ["py37", "py38", "py39", "py310"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
