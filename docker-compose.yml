@@ -1,2 +1,14 @@
+version: "3.9"
 services:
-  qcc-wfm-orthanc-cache:
+  fastapi:
+    build: .
+    ports:
+      - "8000:8000"  # Expose port 8000
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

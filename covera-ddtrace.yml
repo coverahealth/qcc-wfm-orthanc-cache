@@ -1,4 +1,0 @@
-traces:
-# src/qcc_wfm_orthanc_cache/main.py
-- qcc_wfm_orthanc_cache.main::main:
-    name: main

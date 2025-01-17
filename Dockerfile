@@ -15,5 +15,4 @@ RUN --mount=type=secret,id=ARTIFACTORY_USER,required \
 
 ENV PATH=/home/qcc/${SERVICE_NAME}/venv/bin:$PATH
 
-CMD ["ddtrace-run", "python3", "-m", "qcc_wfm_orthanc_cache.main"]
-
+CMD ["ddtrace-run", "uvicorn", "qcc_wfm_orthanc_cache.api:app", "--port", "8000", "--host", "0.0.0.0"]
